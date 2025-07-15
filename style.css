@@ -1,0 +1,72 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 1rem;
+  background: #f9f9f9;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+input[type="text"] {
+  width: 100%;
+  max-width: 400px;
+  padding: 0.6rem;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.video-item {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.video-item iframe {
+  width: 100%;
+  aspect-ratio: 16/9;
+  border: none;
+  border-radius: 8px;
+}
+
+.video-item span {
+  display: block;
+  margin-top: 0.5rem;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.about, .contact {
+  margin-top: 3rem;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 6px rgba(0,0,0,0.1);
+}
+
+.about ul {
+  padding-left: 1.2rem;
+}
+
+.contact a {
+  margin: 0 0.5rem;
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+.contact i {
+  margin-right: 5px;
+  color: #d63031;
+}
