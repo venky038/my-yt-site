@@ -1,27 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>My YouTube Channel</title>
   <style>
-    body { font-family: Arial; text-align: center; padding: 50px; background: #f9f9f9; }
-    iframe { margin-top: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.2); }
-    a { font-size: 18px; color: #d00; text-decoration: none; margin-top: 20px; display: inline-block; }
+    body { font-family: sans-serif; padding: 1rem; margin: 0; transition: background 0.3s, color 0.3s; }
+    body.dark { background: #121212; color: #eee; }
+    body.light { background: #ffffff; color: #000; }
+    .toggle-theme { position: fixed; top: 1rem; right: 1rem; }
+    .videos { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1rem; margin-top: 1rem; }
+    iframe { width: 100%; border-radius: 10px; aspect-ratio: 16/9; }
+    input[type="text"] { width: 100%; padding: 0.5rem; margin-top: 1rem; font-size: 1rem; }
+    .section { margin-top: 2rem; }
+    .video-item { display: flex; flex-direction: column; }
+    a { color: inherit; text-decoration: none; }
   </style>
 </head>
-<body>
+<body class="light">
+  <button class="toggle-theme">🌙 Dark Mode</button>
+
   <h1>Welcome to My YouTube Channel</h1>
-  <p>Subscribe for awesome content!</p>
+  <p>Check out my latest videos and subscribe!</p>
 
-  <!-- Working video embed -->
-  <iframe width="560" height="315" 
-    src="https://www.youtube.com/embed/SDWQ1aoV4U4" 
-    frameborder="0" 
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-    allowfullscreen>
-  </iframe>
+  <input type="text" id="search" placeholder="Search videos..." />
 
-  <br><br>
-  <a href="https://www.youtube.com/@kaparthimanogatam2363" target="_blank">Visit My Channel</a>
+  <div class="videos" id="videoList">
+    <!-- Replace these iframes with your actual video IDs -->
+    <div class="video-item">
+      <iframe src="https://youtu.be/SDWQ1aoV4U4?si=pNiRfnRVFnN98bTn" title="Video 1" allowfullscreen></iframe>
+      <span>Manogatam Episode 1 - Introduction</span>
+    </div>
+    <div class="video-item">
+      <iframe src="https://youtu.be/x417HAGQY_w?si=eYuDT98lqAoHecu_" title="Video 2" allowfullscreen></iframe>
+      <span>Manogatam Episode 2 - Emotions</span>
+    </div>
+    <div class="video-item">
+      <iframe src="https://youtu.be/orov6fuJjjY?si=UFzURSEJwtKjpiAf" title="Video 3" allowfullscreen></iframe>
+      <span>Manogatam Episode 3 - Relationships</span>
+    </div>
+  </div>
+
+  <div class="section about">
+    <h2>About</h2>
+    <p>I explore human psychology, emotions, and relationships through engaging videos in Telugu. My goal is to bring thoughtful conversations and self-awareness to viewers.</p>
+  </div>
+
+  <div class="section contact">
+    <h2>Contact / Social Links</h2>
+    <p>
+      <a href="mailto:yourname@example.com">📧 Email</a> |
+      <a href="https://www.youtube.com/@kaparthimanogatam2363" target="_blank">📺 YouTube</a> |
+      <a href="https://instagram.com/yourprofile" target="_blank">📸 Instagram</a>
+    </p>
+  </div>
+
+  <script>
+    const searchInput = document.getElementById("search");
+    const videos = document.querySelectorAll(".video-item");
+
+    searchInput.addEventListener("input", function () {
+      const query = this.value.toLowerCase();
+      videos.forEach(v => {
+        const title = v.innerText.toLowerCase();
+        v.style.display = title.includes(query) ? "block" : "none";
+      });
+    });
+
+    const toggleBtn = document.querySelector('.toggle-theme');
+    toggleBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      document.body.classList.toggle('light');
+      toggleBtn.textContent = document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
+    });
+  </script>
 </body>
 </html>
