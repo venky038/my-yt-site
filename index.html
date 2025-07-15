@@ -3,43 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <title>My YouTube Channel</title>
-  <style>
-    body {
-      font-family: sans-serif;
-      padding: 1rem;
-      margin: 0;
-      background: #ffffff;
-      color: #000;
-    }
-    .videos {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    iframe {
-      width: 100%;
-      border-radius: 10px;
-      aspect-ratio: 16 / 9;
-    }
-    input[type="text"] {
-      width: 100%;
-      padding: 0.5rem;
-      margin-top: 1rem;
-      font-size: 1rem;
-    }
-    .section {
-      margin-top: 2rem;
-    }
-    .video-item {
-      display: flex;
-      flex-direction: column;
-    }
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
@@ -70,11 +35,17 @@
 
   <div class="section contact">
     <h2>Contact / Social Links</h2>
-    <p>
-      <a href="mailto:yourname@example.com">📧 Email</a> |
-      <a href="https://www.youtube.com/@kaparthimanogatam2363" target="_blank">📺 YouTube</a> |
-      <a href="https://instagram.com/yourprofile" target="_blank">📸 Instagram</a>
-    </p>
+    <div class="social-links">
+      <a href="mailto:yourname@example.com" class="icon email" title="Email">
+        <i class="fas fa-envelope"></i> Email
+      </a>
+      <a href="https://www.youtube.com/@kaparthimanogatam2363" class="icon youtube" target="_blank" title="YouTube">
+        <i class="fab fa-youtube"></i> YouTube
+      </a>
+      <a href="https://instagram.com/yourprofile" class="icon instagram" target="_blank" title="Instagram">
+        <i class="fab fa-instagram"></i> Instagram
+      </a>
+    </div>
   </div>
 
   <script>
