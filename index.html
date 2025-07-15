@@ -2,30 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>My YouTube Channel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kaparthi Manogatam</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
-  <h1>My channel promotes the nationalism ,patriotism,life history of national heroes,current affairs,international issues impact on India.</h1>
-  <p>Check out my latest videos and subscribe!</p>
+  <h1>Kaparthi Manogatam</h1>
+  <p>Latest YouTube videos about psychology, emotions, and relationships in Telugu.</p>
 
   <input type="text" id="search" placeholder="Search videos..." />
 
-  <div class="videos" id="videoList">
-    <div class="video-item">
-      <iframe src="https://www.youtube.com/embed/SDWQ1aoV4U4" title="Video 1" allowfullscreen></iframe>
-      <span>Video 1</span>
-    </div>
-    <div class="video-item">
-      <iframe src="https://www.youtube.com/embed/x417HAGQY_w" title="Video 2" allowfullscreen></iframe>
-      <span>Video 2</span>
-    </div>
-    <div class="video-item">
-      <iframe src="https://www.youtube.com/embed/orov6fuJjjY" title="Video 3" allowfullscreen></iframe>
-      <span>Video 2</span>
-    </div>
+  <div class="section">
+    <h2>🎥 Latest Videos</h2>
+    <div class="videos" id="videoList"></div>
+  </div>
+
+  <div class="section">
+    <h2>⚡ YouTube Shorts</h2>
+    <div class="videos" id="shortsList"></div>
   </div>
 
   <div class="section about">
@@ -48,17 +44,6 @@
     </div>
   </div>
 
-  <script>
-    const searchInput = document.getElementById("search");
-    const videos = document.querySelectorAll(".video-item");
-
-    searchInput.addEventListener("input", function () {
-      const query = this.value.toLowerCase();
-      videos.forEach(v => {
-        const title = v.innerText.toLowerCase();
-        v.style.display = title.includes(query) ? "block" : "none";
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
