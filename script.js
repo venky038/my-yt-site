@@ -1,4 +1,4 @@
-const API_KEY = "AIzaSyDAGO0gTV7UG1PeRF-w-wEjyGRNvz9iDpI";
+const API_KEY = "AIzaSyAodq9hBo6LGUpu9U2p_aRN6CaB-rBsbHU";
 const CHANNEL_ID = "UC2Nm5nz_4YsPXvTjaoCesyw";
 const SHORTS_PLAYLIST_ID = "PLky6lAH5zVJS4A9nJr6lBnpmPXUoK9FpU";
 
